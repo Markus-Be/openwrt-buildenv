@@ -1,14 +1,14 @@
+#!/bin/bash
+
 # fail on errors
 set +e
 
 # create and enter branch directory
 branch=chaos_calmer
-
 if [ ! -d $BRANCH ]
 then
 	mkdir $BRANCH
 fi
-
 cd $BRANCH
 
 # build options
