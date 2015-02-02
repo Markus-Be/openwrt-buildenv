@@ -1,3 +1,6 @@
+# fail on errors
+set +e
+
 # create and enter branch directory
 branch=chaos_calmer
 
@@ -13,9 +16,7 @@ REMOTE=git://git.openwrt.org/openwrt.git
 TARGET=ar71xx
 MAKEOPTS="-j2"
 
-# fail on errors
-set +e
-
+# checkout openwrt repository
 if [ ! -d openwrt ]
 then
 	# install build-env sources

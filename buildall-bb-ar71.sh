@@ -1,11 +1,12 @@
+# fail on errors
+set +e
+
 # create and enter branch directory
 BRANCH=barrier_breaker
-
 if [ ! -d $BRANCH ]
 then
 	mkdir $BRANCH
 fi
-
 cd $BRANCH
 
 # build options
@@ -13,9 +14,7 @@ REMOTE=git://git.openwrt.org/14.07/openwrt.git
 TARGET=ar71xx
 MAKEOPTS="-j2"
 
-# fail on errors
-set +e
-
+# check out openwrt repository
 if [ ! -d openwrt ]
 then
 	# install build-env sources
