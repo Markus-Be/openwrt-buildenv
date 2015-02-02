@@ -1,7 +1,8 @@
 # create and enter branch directory
 BRANCH=barrier_breaker
 
-if [ ! -d $BRANCH ]; then
+if [ ! -d $BRANCH ]
+then
 	mkdir $BRANCH
 fi
 
@@ -15,8 +16,13 @@ MAKEOPTS="-j2"
 # fail on errors
 set +e
 
-# install build-env sources
-git clone $REMOTE openwrt
+if [ ! -d openwrt ]
+then
+	# install build-env sources
+	git clone $REMOTE openwrt
+else
+	git pull
+fi
 
 # enter build-env
 cd openwrt
