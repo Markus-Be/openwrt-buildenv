@@ -1,7 +1,8 @@
 # build imagebuilder with all packages for a given platform
+
+# build options
 REMOTE=git://git.openwrt.org/14.07/openwrt.git
 TARGET=ar71xx
-
 MAKEOPTS="-j2"
 
 # fail on errors
