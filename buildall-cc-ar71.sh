@@ -88,4 +88,4 @@ set -e
 
 # paste command
 echo "please run following within screen or tmux:"
-echo "make $MAKEOPTS IGNORE_ERRORS=m V=99 BUILD_LOG=1"
+echo "cd ${BRANCH}/openwrt && make $MAKEOPTS IGNORE_ERRORS=m V=99 BUILD_LOG=1"
