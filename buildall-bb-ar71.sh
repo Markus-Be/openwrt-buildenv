@@ -1,11 +1,11 @@
 # create and enter branch directory
-DIR="barrier_breaker"
+branch=barrier_breaker
 
-if [ -d $DIR ]; then
-	mkdir $DIR
+if [ -d $branch ]; then
+	mkdir $branch
 fi
 
-cd $DIR
+cd $branch
 
 # build options
 REMOTE=git://git.openwrt.org/14.07/openwrt.git
@@ -45,11 +45,7 @@ cat >.config <<EOF
 CONFIG_MODULES=y
 CONFIG_HAVE_DOT_CONFIG=y
 CONFIG_TARGET_${TARGET}=y
-# CONFIG_TARGET_ROOTFS_EXT4FS is not set
-# CONFIG_TARGET_ROOTFS_JFFS2 is not set
 CONFIG_TARGET_ROOTFS_SQUASHFS=y
-# CONFIG_TARGET_ROOTFS_INCLUDE_UIMAGE is not set
-# CONFIG_TARGET_ROOTFS_INCLUDE_ZIMAGE is not set
 CONFIG_ALL=y
 CONFIG_IMAGEOPT=y
 CONFIG_DEVEL=y
@@ -70,7 +66,7 @@ CONFIG_VERSIONOPT=y
 CONFIG_VERSION_DIST="OpenWrt"
 CONFIG_VERSION_NICK=""
 CONFIG_VERSION_NUMBER=""
-CONFIG_VERSION_REPO="http://openwrt.k4rnet.de/barrier_breaker/packages"
+CONFIG_VERSION_REPO="http://openwrt.k4rnet.de/$branch/packages"
 CONFIG_PACKAGE_collectd-mod-netlink=n
 CONFIG_PACKAGE_kmod-pcspkr=n
 CONFIG_PACKAGE_LUCI=y
