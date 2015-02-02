@@ -2,7 +2,7 @@
 REMOTE=git://git.openwrt.org/14.07/openwrt.git
 TARGET=ar71xx
 
-MAKEOPTS="-j1"
+MAKEOPTS="-j2"
 
 # fail on errors
 set +e
@@ -11,7 +11,6 @@ git clone $REMOTE openwrt
 cd openwrt
 cp feeds.conf.default feeds.conf
 echo "src-git luci2 http://git.openwrt.org/project/luci2/ui.git" >> feeds.conf
-#echo "src-git cjdns git://github.com/seattlemeshnet/meshbox.git" >> feeds.conf
 echo "src-git cjdns git://github.com/seattlemeshnet/meshbox.git;for-14.07" >> feeds.conf
 echo "src-git fastd git://git.metameute.de/lff/pkg_fastd" >> feeds.conf
 echo "src-git mwan3 git://github.com/Adze1502/mwan.git" >> feeds.conf
@@ -21,7 +20,7 @@ echo "src-git libreage git://github.com/libremap/libremap-agent-openwrt.git" >> 
 echo "src-git kadnode git://github.com/mwarning/KadNode.git" >> feeds.conf
 echo "src-git kadlibsodium git://github.com/mwarning/libsodium-openwrt.git" >> feeds.conf
 echo "src-git fswebcam git://github.com/fsphil/fswebcam.git" >> feeds.conf
-echo "src-git solarfestival git://github.com:freifunk/freifunk-leipzig/solarfestival-packages.git" >> feeds.conf
+echo "src-git solarfestival git://github.com/freifunk/freifunk-leipzig/solarfestival-packages.git" >> feeds.conf
 #echo "src-git oldpackages http://git.openwrt.org/packages.git" >> feeds.conf
 
 scripts/feeds update -a
@@ -67,6 +66,7 @@ CONFIG_KERNEL_DEBUG_KERNEL=y
 CONFIG_KERNEL_DEBUG_INFO=y
 CONFIG_PACKAGE_kmod-ath=y
 CONFIG_ATH_USER_REGD=y
+CONFIG_PACKAGE_ATH_DFS=y
 CONFIG_PACKAGE_ATH_DEBUG=y
 CONFIG_VERSIONOPT=y
 CONFIG_VERSION_DIST="OpenWrt"
@@ -75,6 +75,8 @@ CONFIG_VERSION_NUMBER=""
 CONFIG_VERSION_REPO="http://openwrt.k4rnet.de/barrier_breaker/packages"
 CONFIG_PACKAGE_collectd-mod-netlink=n
 CONFIG_PACKAGE_kmod-pcspkr=n
+CONFIG_PACKAGE_LUCI=y
+CONFIG_PACKAGE_6IN4=y
 EOF
 
 make defconfig
