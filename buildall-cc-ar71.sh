@@ -1,7 +1,7 @@
 # create and enter branch directory
 branch=chaos_calmer
 
-if [ -d $BRANCH ]; then
+if [ ! -d $BRANCH ]; then
 	mkdir $BRANCH
 fi
 

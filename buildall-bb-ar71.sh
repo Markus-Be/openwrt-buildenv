@@ -1,7 +1,7 @@
 # create and enter branch directory
 BRANCH=barrier_breaker
 
-if [ -d $BRANCH ]; then
+if [ ! -d $BRANCH ]; then
 	mkdir $BRANCH
 fi
 
