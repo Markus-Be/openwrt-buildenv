@@ -1,4 +1,11 @@
-# build imagebuilder with all packages for a given platform
+# create and enter branch directory
+DIR="barrier_breaker"
+
+if [ -d $DIR ]; then
+	mkdir $DIR
+fi
+
+cd $DIR
 
 # build options
 REMOTE=git://git.openwrt.org/14.07/openwrt.git
@@ -81,5 +88,3 @@ echo "dont forget to set batman-adv devel version git commit number manually if 
 echo "please do it within screen###"
 echo "# make everything with"
 echo "make $MAKEOPTS IGNORE_ERRORS=m V=99 BUILD_LOG=1"
-
-
