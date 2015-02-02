@@ -86,8 +86,6 @@ make defconfig
 # allow stuff to fail from here on
 set -e
 
-# paste commands
-echo "dont forget to set batman-adv devel version git commit number manually if you need that"
-echo "please do it within screen###"
-echo "# make everything with"
+# paste command
+echo "please run following within screen or tmux:"
 echo "make $MAKEOPTS IGNORE_ERRORS=m V=99 BUILD_LOG=1"
