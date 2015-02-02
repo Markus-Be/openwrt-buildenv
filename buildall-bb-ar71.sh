@@ -1,11 +1,11 @@
 # create and enter branch directory
-branch=barrier_breaker
+BRANCH=barrier_breaker
 
-if [ -d $branch ]; then
-	mkdir $branch
+if [ -d $BRANCH ]; then
+	mkdir $BRANCH
 fi
 
-cd $branch
+cd $BRANCH
 
 # build options
 REMOTE=git://git.openwrt.org/14.07/openwrt.git
@@ -66,7 +66,7 @@ CONFIG_VERSIONOPT=y
 CONFIG_VERSION_DIST="OpenWrt"
 CONFIG_VERSION_NICK=""
 CONFIG_VERSION_NUMBER=""
-CONFIG_VERSION_REPO="http://openwrt.k4rnet.de/$branch/packages"
+CONFIG_VERSION_REPO="http://openwrt.k4rnet.de/$BRANCH/packages"
 CONFIG_PACKAGE_collectd-mod-netlink=n
 CONFIG_PACKAGE_kmod-pcspkr=n
 CONFIG_PACKAGE_LUCI=y
