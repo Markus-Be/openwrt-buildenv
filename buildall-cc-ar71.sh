@@ -4,7 +4,7 @@
 set +e
 
 # create and enter branch directory
-branch=chaos_calmer
+BRANCH=chaos_calmer
 if [ ! -d $BRANCH ]
 then
 	mkdir $BRANCH
